@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bd {
+  border: 1px solid #f00;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+:root {
+  --headerHeight: 80px;
+}
+
+html,
+body {
+  @apply min-h-full scroll-smooth;
+}
+
+html {
+  @apply font-mont text-body antialiased;
+}
+
+body {
+  @apply text-sm leading-relaxed;
+}
+
+h1,
+.h1 {
+  @apply text-4xl font-extrabold tracking-tight text-brand;
+}
+
+h2,
+.h2 {
+  @apply text-3xl font-extrabold tracking-tight text-brand;
+}
+
+h3,
+.h3 {
+  @apply text-xl font-semibold tracking-tight text-brand;
+}
+
+.clickable-block {
+  @apply cursor-pointer;
+}
+
+.btn {
+  @apply inline-flex items-center space-x-1 font-medium text-brand;
+}
+
+@layer components {
+  .custom-scroll::-webkit-scrollbar {
+    @apply h-1.5 w-1.5 rounded-3xl;
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    @apply rounded-3xl bg-gray-200;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    @apply rounded-3xl bg-gray-100;
+  }
+
+  .custom-scroll.custom-scroll-y {
+    @apply pr-1.5;
+  }
+
+  .custom-scroll.custom-scroll-x {
+    @apply pb-1.5;
+  }
+
+  .heading-gr {
+    @apply bg-gradient-to-br from-brand to-brand-primary bg-clip-text text-transparent;
+  }
+
+  .hr-line {
+    background-image: url(../img/hr.svg);
+
+    @apply h-4 w-56 bg-contain bg-repeat-x opacity-20;
+  }
+
+  .dropdown {
+    @apply relative;
+  }
+
+  .dropdown-options {
+    @apply absolute left-0 top-full mt-2 w-full overflow-hidden rounded border bg-white text-ssm shadow-lg shadow-brand/5;
+  }
+
+  .dropdown-results {
+    @apply custom-scroll custom-scroll-y z-50 max-h-52 w-full divide-y divide-neutral-100 overflow-y-auto;
+  }
+
+  .dropdown-item {
+    @apply px-3 py-1.5 transition hover:bg-neutral-50;
+  }
+
+  .form-control {
+    @apply w-full rounded border bg-white px-3 py-2 text-ssm placeholder:text-ssm focus:outline-none;
+  }
+
+  .search-region-f {
+    @apply relative w-11/12 rounded-lg border transition duration-500 focus-within:shadow-lg focus-within:shadow-brand/10;
+  }
+
+  .search-region-f .form-control {
+    @apply rounded-lg border-0 border-none pl-12;
+  }
+
+  .search-region-f__icon {
+    @apply pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 opacity-50;
+  }
+
+  .container {
+    @apply max-w-screen-xl px-4;
+  }
+
+  #container {
+    @apply flex min-h-screen flex-col;
+  }
+
+  #header {
+    @apply sticky top-0 z-50 w-full bg-white/80 text-ssm font-medium backdrop-blur;
+  }
+
+  .menu {
+    @apply flex items-center;
+  }
+
+  .menu a {
+    @apply block px-3 transition hover:underline;
+  }
+
+  .menu a.is_active {
+    @apply text-brand underline;
+  }
+
+  .menu__submenu {
+    @apply relative;
+  }
+
+  .menu__submenu-toggle {
+    @apply flex items-center space-x-1 px-3;
+  }
+
+  .menu__submenu-menu {
+    @apply absolute right-0 top-full mt-4 w-48 divide-y divide-neutral-100 rounded bg-white py-2 shadow-lg;
+  }
+
+  .menu__submenu-menu a {
+    @apply block px-3 py-1.5 transition hover:bg-neutral-50;
+  }
+
+  #main {
+    @apply flex-grow;
+  }
+
+  .products-list > div {
+    @apply flex items-center md-down:flex-col md-down:gap-6 md-down:text-center;
+  }
+
+  .products-list > div:nth-child(2n) {
+    @apply flex-row-reverse md-down:flex-col;
+  }
+
+  .card {
+    @apply space-y-6 rounded border bg-white p-6 py-12 transition duration-300 hover:shadow-2xl hover:shadow-brand/10;
+  }
+
+  .card__icon {
+    @apply h-8 w-8 text-body/50;
+  }
+
+  .card-news {
+    @apply space-y-3 rounded border  bg-brand/[0.04] p-4 pb-12;
+  }
+
+  .card-news__title {
+    @apply line-clamp-1 text-lg font-semibold text-black;
+  }
+
+  .card-news__body {
+    @apply line-clamp-3;
+  }
+
+  .card-author {
+    @apply !mt-12 flex items-center space-x-3;
+  }
+
+  .card-author__avatar {
+    @apply h-12 w-12 shrink-0 rounded-full bg-neutral-300 object-cover;
+  }
+
+  #footer {
+    @apply flex-shrink-0;
+  }
+
+  .footer__ul {
+    @apply flex flex-wrap items-center md:justify-center;
+  }
+
+  .footer__ul a {
+    @apply inline-block p-2 transition hover:text-body hover:underline;
+  }
+
+  .footer__ul a.is_active {
+    @apply text-brand underline;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "asb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i tailwind.css -o dist/css/main.css --watch",
+    "start": "browser-sync start --config \"bs-config.js\"",
+    "dev-all": "npm-run-all --parallel dev start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/line-clamp": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.12",
+    "browser-sync": "latest",
+    "npm-run-all": "latest"
+  }
+}
