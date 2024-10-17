@@ -125,6 +125,10 @@ h3,
     @apply sticky top-0 z-50 w-full bg-white/80 text-ssm font-medium backdrop-blur;
   }
 
+  .desktop-nav {
+    @apply lg-down:hidden;
+  }
+
   .menu {
     @apply flex items-center;
   }
@@ -151,6 +155,27 @@ h3,
 
   .menu__submenu-menu a {
     @apply block px-3 py-1.5 transition hover:bg-neutral-50;
+  }
+
+  .mobile-nav {
+    @apply custom-scroll custom-scroll-y fixed left-0 top-0 h-screen w-10/12 space-y-6 overflow-y-auto bg-gradient-to-b from-brand/[0.99] via-black/[0.99] to-black/95 p-6 pt-12 text-white transition will-change-transform;
+  }
+
+  .mobile-nav .menu {
+    @apply block divide-y divide-white/20;
+  }
+
+  .mobile-nav .menu a,
+  .mobile-nav .menu__submenu-toggle {
+    @apply w-full justify-between p-3;
+  }
+
+  .mobile-nav .menu__submenu-menu {
+    @apply relative left-0 right-auto top-0 m-0 w-full list-outside list-none divide-y divide-white/20 rounded-none bg-transparent p-0 will-change-transform;
+  }
+
+  .mobile-nav .menu__submenu-menu a {
+    @apply pl-6;
   }
 
   #main {
