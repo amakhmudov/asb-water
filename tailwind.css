@@ -102,7 +102,7 @@ h3,
   }
 
   .search-region-f {
-    @apply relative w-11/12 rounded-lg border transition duration-500 focus-within:shadow-lg focus-within:shadow-brand/10;
+    @apply relative rounded-lg border transition duration-500 focus-within:shadow-lg focus-within:shadow-brand/10 md:w-11/12;
   }
 
   .search-region-f .form-control {
@@ -166,7 +166,15 @@ h3,
   }
 
   .card {
-    @apply space-y-6 rounded border bg-white p-6 py-12 transition duration-300 hover:shadow-2xl hover:shadow-brand/10;
+    @apply space-y-6 rounded border bg-white p-6 py-12 transition duration-300 will-change-transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand/10;
+  }
+
+  .card__title {
+    @apply line-clamp-1 text-base;
+  }
+
+  .card__body {
+    @apply line-clamp-3;
   }
 
   .card__icon {
@@ -174,7 +182,11 @@ h3,
   }
 
   .card-news {
-    @apply space-y-3 rounded border  bg-brand/[0.04] p-4 pb-12;
+    @apply rounded border bg-brand/[0.04] transition duration-300 will-change-transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand/10;
+  }
+
+  .card-news__content {
+    @apply space-y-6 p-4 pb-12;
   }
 
   .card-news__title {
@@ -186,7 +198,7 @@ h3,
   }
 
   .card-author {
-    @apply !mt-12 flex items-center space-x-3;
+    @apply flex items-center space-x-3;
   }
 
   .card-author__avatar {
@@ -195,6 +207,14 @@ h3,
 
   #footer {
     @apply flex-shrink-0;
+  }
+
+  .footer__socials {
+    @apply flex gap-3;
+  }
+
+  .footer__founders {
+    @apply flex gap-3 sm-down:w-full sm-down:justify-evenly;
   }
 
   .footer__ul {
